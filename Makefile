@@ -51,10 +51,12 @@ clean:
 # Run the main program
 run_main: $(MAIN_TARGET)
 	./$(MAIN_TARGET) ${MAIN_ARG1} $(MAIN_ARG2)
+	$(MAKE) clean
 
 # Run the test program
 run_test: $(TEST_TARGET)
 	./$(TEST_TARGET)
+	$(MAKE) clean
 
 # Phony targets
 .PHONY: all clean run_main run_test
