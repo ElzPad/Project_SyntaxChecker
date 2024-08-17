@@ -1,5 +1,7 @@
+exe/*
+
 files/output.txt
 
-src/main.exe
+test/*
 
 .vscode/
