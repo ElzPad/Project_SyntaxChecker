@@ -9,7 +9,6 @@
 
 int main(int argc, char *argv[]) {
   FILE *fpIn, *fpOut;
-  LIST lines;
 
   if (argc != 3) {
     fprintf(stderr, "Usage: %s <sourceFile> <outputFile>\n", argv[0]);
