@@ -4,6 +4,8 @@ CC = gcc
 # Compiler flags
 CFLAGS = -Wall -g
 
+LDFLAGS = -lcunit
+
 INCLUDES = -I$(SRC_DIR)/line -I$(SRC_DIR)/list
 
 # Directories
@@ -38,7 +40,7 @@ $(MAIN_TARGET): $(MAIN_OBJS)
 
 # Build the test program
 $(TEST_TARGET): $(TEST_OBJS)
-	$(CC) $(CFLAGS) -o $(TEST_TARGET) $(TEST_OBJS)
+	$(CC) $(CFLAGS) -o $(TEST_TARGET) $(TEST_OBJS) $(LDFLAGS)
 
 # Compile
 %.o: %.c
@@ -46,7 +48,7 @@ $(TEST_TARGET): $(TEST_OBJS)
 
 # Clean build files
 clean:
-	rm -f $(MAIN_OBJS) $(TEST_OBJS) $(MAIN_TARGET) $(TEST_TARGET)
+	rm -f $(MAIN_OBJS) $(TEST_OBJS)
 
 # Run the main program
 run_main: $(MAIN_TARGET)
